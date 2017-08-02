@@ -1,0 +1,82 @@
+/*
+ES6 - Classes
+*/ 
+
+//Example: Declaring a class
+class Polygon { 
+   constructor(height, width) { 
+      this.height = height; 
+      this.width = width; 
+   } 
+}
+
+//Example: Class Expression
+var Polygon = class { 
+   constructor(height, width) { 
+      this.height = height; 
+      this.width = width; 
+   } 
+}
+//The above code snippet represents an unnamed class expression. A named class expression can be written as.
+
+//Example: Putting them together
+class Polygon { 
+   constructor(height, width) { 
+      this.h = height; 
+      this.w = width;
+   } 
+   test() { 
+      console.log("The height of the polygon: ", this.h) 
+      console.log("The width of the polygon: ",this. w) 
+   } 
+} 
+
+//creating an instance  
+var polyObj = new Polygon(10,20); 
+polyObj.test(); 
+
+//The Static Keyword   
+class StaticMem { 
+   static disp() { 
+      console.log("Static Function called") 
+   } 
+} 
+StaticMem.disp() //invoke the static method
+
+//The instanceof operator
+class Person{ } 
+var obj = new Person() 
+var isPerson = obj instanceof Person; 
+console.log(" obj is an instance of Person " + isPerson); 
+
+//Class Inheritance
+class Shape { 
+   constructor(a) { 
+      this.Area = a
+   } 
+} 
+class Circle extends Shape { 
+   disp() { 
+      console.log("Area of the circle:  "+this.Area) 
+   } 
+} 
+var obj = new Circle(223); 
+obj.disp() 
+
+
+//The Super Keyword
+
+'use strict' 
+class PrinterClass { 
+   doPrint() {
+      console.log("doPrint() from Parent called…") 
+   } 
+}  
+class StringPrinter extends PrinterClass { 
+   doPrint() { 
+      super.doPrint() //Take function from parent
+      console.log("doPrint() is printing a string…") 
+   } 
+} 
+var obj = new StringPrinter() 
+obj.doPrint()

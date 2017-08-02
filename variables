@@ -1,0 +1,60 @@
+/*
+ES6 - Variables
+*/
+"use strict" 
+//Global vs. Local Variable
+var num = 10 
+function globalVsLocal() { 
+   var num = 100 
+   console.log("value of num in "+num) 
+/*
+ES6 - Variables
+*/
+"use strict" 
+//Global vs. Local Variable
+var num = 10 
+function globalVsLocal() { 
+   var num = 100 
+   console.log("value of num in "+num) 
+} 
+console.log("value of num outside "+num) 
+globalVsLocal()
+
+//The Let and Block Scope
+var num2 = 120 
+console.log("value of num outside "+num2) 
+function letAddBlockScope() { 
+   var num2 = 120 
+    console.log("value of num in "+num2) 
+   {let num2 = 125
+   console.log("value of num after let in block "+num2)   
+   }
+   console.log("value of num in after redaclaration let in block "+num2) 
+   {var num2 = 130 }
+   console.log("value of num in after redaclaration var in block "+num2) 
+} 
+letAddBlockScope()     
+
+//Example: let v/s var 
+var no = 10; 
+var no = 20; 
+console.log(no);
+
+//let no = 10; //<---Throw an error
+//let no = 20; //<---Throw an error
+console.log(no);
+
+//The const
+const x = 10 
+//x = 12  //<---Throw an error
+
+//ES6 and Variable Hoisting
+
+var main = function() { 
+   for(var x = 0;x<5;x++) { 
+      console.log(x); 
+   } 
+   console.log("x can be accessed outside the block scope x value is :"+x); 
+   console.log('x is hoisted to the function scope'); 
+} 
+main();
